@@ -1,5 +1,7 @@
 package com.relicary.spring_boot_go.controllers;
 
+import com.relicary.spring_boot_go.model.Contact;
+import com.relicary.spring_boot_go.services.ContactService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,23 +13,21 @@ import org.springframework.web.servlet.ModelAndView;
 @Log4j2
 public class ContactController {
 
+    private final ContactService contactService;
+
+    public ContactController(ContactService contactService) {
+        this.contactService = contactService;
+    }
+
     @GetMapping("/contact")
     public String displayContactPage() {
         return "contact.html";
     }
 
     @PostMapping("/saveMsg")
-    public ModelAndView saveMessage(
-            @RequestParam String name,
-            @RequestParam String mobileNum,
-            @RequestParam String email,
-            @RequestParam String subject,
-            @RequestParam String message) {
-        log.info("Name: {}", name);
-        log.info("MobileNum: {}", mobileNum);
-        log.info("Email: {}", email);
-        log.info("Subject: {}", subject);
-        log.info("Message: {}", message);
+    public ModelAndView saveMessage(Contact contact) {
+
+        contactService.saveMessageDetails(contact);
 
         return new ModelAndView("redirect:/contact");
     }
