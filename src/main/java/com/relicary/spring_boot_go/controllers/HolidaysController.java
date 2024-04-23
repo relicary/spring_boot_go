@@ -1,7 +1,7 @@
 package com.relicary.spring_boot_go.controllers;
 
 import com.relicary.spring_boot_go.model.Holiday;
-import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Controller
-@Log4j2
+@Slf4j
 public class HolidaysController {
 
     @GetMapping("/holidays")

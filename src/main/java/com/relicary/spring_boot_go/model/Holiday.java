@@ -1,12 +1,8 @@
 package com.relicary.spring_boot_go.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.ToString;
+import lombok.Data;
 
-@AllArgsConstructor
-@Getter
-@ToString
+@Data
 public class Holiday {
 
     private final String day;

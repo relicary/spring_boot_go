@@ -1,12 +1,8 @@
 package com.relicary.spring_boot_go.model;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
 
-@Getter
-@Setter
-@ToString
+@Data
 public class Contact {
 
     String name;
