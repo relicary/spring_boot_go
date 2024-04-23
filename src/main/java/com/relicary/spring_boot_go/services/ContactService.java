@@ -5,13 +5,13 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
-import org.springframework.web.context.annotation.SessionScope;
+import org.springframework.web.context.annotation.ApplicationScope;
 
 @Service
 @Log4j2
 @Getter
 @Setter
-@SessionScope
+@ApplicationScope
 public class ContactService {
     
     private int counter = 0;
